@@ -30,6 +30,7 @@ public class SpalshActivity extends Activity{
         {
             Intent intent=new Intent(SpalshActivity.this,MainActivity.class);
             startActivity(intent);
+            SpalshActivity.this.finish();
 
         }
 
