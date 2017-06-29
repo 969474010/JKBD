@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:drawableTop="@mipmap/main_menu_exam"
             android:background="@null"
+            android:onClick="text"
             android:text="随机测试"
             android:textColor="#000"/>
         <Button
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:drawableTop="@mipmap/main_menu_result"
             android:background="@null"
+            android:onClick="Exit"
             android:text="全部测试"
             android:textColor="#000"/>
     </LinearLayout>
