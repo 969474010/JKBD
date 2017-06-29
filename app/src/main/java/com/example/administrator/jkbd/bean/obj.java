@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/29.
  */
 
-public class obj 
+public class obj
 {
     /**
      * error_code : 0

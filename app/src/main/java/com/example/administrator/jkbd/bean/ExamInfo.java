@@ -44,4 +44,11 @@ public class ExamInfo
         this.questionCount = questionCount;
     }
 
+    @Override
+    public String toString() {
+        return
+                "考试科目：" + subjectTitle + '\n' +
+                "试题数目：" + questionCount + '\n' +
+                "考试时间：" + limitTime +"分钟";
+    }
 }
