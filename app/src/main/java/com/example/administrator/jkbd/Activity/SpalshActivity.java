@@ -1,9 +1,11 @@
-package com.example.administrator.jkbd;
+package com.example.administrator.jkbd.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
+import com.example.administrator.jkbd.R;
 
 /**
  * Created by Administrator on 2017/6/28.
