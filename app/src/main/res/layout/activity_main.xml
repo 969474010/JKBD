@@ -1,42 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.jkbd.MainActivity"
-    android:background="@mipmap/main">
-
-    <ImageButton
-        android:id="@+id/ibtn_SJCS"
-        android:layout_width="wrap_content"
+    android:background="@mipmap/main"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="98dp" />
-
-    <ImageButton
-        android:id="@+id/ibtn_QBCS"
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_menu_exam"
+            android:background="@null"
+            android:text="随机测试"
+            android:textColor="#000"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_menu_result"
+            android:background="@null"
+            android:text="全部测试"
+            android:textColor="#000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteY="98dp"
-        tools:layout_editor_absoluteX="205dp" />
+        android:gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_menu_message"
+            android:background="@null"
+            android:text="设置"
+            android:textColor="#000"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_menu_exit"
+            android:background="@null"
+            android:text="退出"
+            android:textColor="#000"/>
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/ibtn_CZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteY="221dp"
-        tools:layout_editor_absoluteX="79dp" />
 
-    <ImageButton
-        android:id="@+id/ibtn_Exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteY="221dp"
-        tools:layout_editor_absoluteX="205dp" />
+</LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
