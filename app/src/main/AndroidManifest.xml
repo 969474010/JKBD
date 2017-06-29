@@ -12,9 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="Android:icon, android:theme">
         <activity android:name=".MainActivity">
-            <intent-filter>
 
-            </intent-filter>
         </activity>
         <activity android:name=".SpalshActivity">
 
