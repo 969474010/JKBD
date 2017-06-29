@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="Android:icon, android:theme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
 
         </activity>
-        <activity android:name=".SpalshActivity">
+        <activity android:name=".Activity.SpalshActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.ExamActivity"></activity>
     </application>
 
 </manifest>
