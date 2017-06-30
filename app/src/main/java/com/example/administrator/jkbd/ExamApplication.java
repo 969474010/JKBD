@@ -16,12 +16,17 @@ import java.util.List;
 public class ExamApplication extends Application {
     ExamInfo mExamInfo;
     List<Exam> mExamList;
-    ExamApplication instance;
+    public static ExamApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
         instance=this;
         initData();
+    }
+    public static ExamApplication getInstance()
+    {
+        return instance;
+
     }
 
     private void initData() {
@@ -44,5 +49,21 @@ public class ExamApplication extends Application {
                     }
                 });
 
+    }
+
+    public ExamInfo getmExamInfo() {
+        return mExamInfo;
+    }
+
+    public void setmExamInfo(ExamInfo mExamInfo) {
+        this.mExamInfo = mExamInfo;
+    }
+
+    public List<Exam> getmExamList() {
+        return mExamList;
+    }
+
+    public void setmExamList(List<Exam> mExamList) {
+        this.mExamList = mExamList;
     }
 }
