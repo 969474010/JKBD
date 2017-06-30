@@ -39,6 +39,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_exam_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="这个标志是何含义？"
@@ -47,6 +48,7 @@
 
     </LinearLayout>
     <ImageView
+        android:id="@+id/im_exam_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:src="@mipmap/exam_image"/>
@@ -62,6 +64,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_op1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="这个标志是何含义？"
@@ -81,6 +84,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_op2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="这个标志是何含义？"
@@ -100,6 +104,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_op3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="这个标志是何含义？"
@@ -119,6 +124,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_op4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="这个标志是何含义？"

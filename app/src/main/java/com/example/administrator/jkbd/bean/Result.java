@@ -34,7 +34,7 @@ public class Result
         this.reason = reason;
     }
 
-    public List<Exam> getResult() {
+    public static List<Exam> getResult() {
         return result;
     }
 
