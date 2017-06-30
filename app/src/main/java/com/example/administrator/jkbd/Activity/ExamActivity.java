@@ -12,6 +12,7 @@ import com.example.administrator.jkbd.ExamApplication;
 import com.example.administrator.jkbd.R;
 import com.example.administrator.jkbd.bean.Exam;
 import com.example.administrator.jkbd.bean.ExamInfo;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void initData() {
+
         ExamInfo examInfo = ExamApplication.getInstance().getmExamInfo();
         if(examInfo!=null)
         {
