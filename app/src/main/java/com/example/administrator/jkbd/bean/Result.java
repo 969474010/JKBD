@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/29.
  */
 
-public class obj
+public class Result
 {
     /**
      * error_code : 0
@@ -16,7 +16,7 @@ public class obj
 
     private int error_code;
     private String reason;
-    private List<String> result;
+    private List<Exam> result;
 
     public int getError_code() {
         return error_code;
@@ -34,11 +34,11 @@ public class obj
         this.reason = reason;
     }
 
-    public List<String> getResult() {
+    public List<Exam> getResult() {
         return result;
     }
 
-    public void setResult(List<String> result) {
+    public void setResult(List<Exam> result) {
         this.result = result;
     }
 }
