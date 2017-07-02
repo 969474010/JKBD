@@ -48,18 +48,7 @@ public class ExamActivity extends AppCompatActivity {
         loadData();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mLoadExamBrodcast!=null)
-        {
-            unregisterReceiver(mLoadExamBrodcast);
-        }
-        if (mLoadQuestionBroadcast!=null)
-        {
-            unregisterReceiver(mLoadQuestionBroadcast);
-        }
-    }
+
 
     private void setListecer() {
         registerReceiver(mLoadExamBrodcast,new IntentFilter(ExamApplication.LOAD_EXAM_INFO));
@@ -156,6 +145,20 @@ public class ExamActivity extends AppCompatActivity {
                 isLoadQuestion=true;
             }
             initData();
+        }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLoadExamBrodcast!=null)
+        {
+            unregisterReceiver(mLoadExamBrodcast);
+        }
+        if (mLoadQuestionBroadcast!=null)
+        {
+            unregisterReceiver(mLoadQuestionBroadcast);
         }
     }
 }

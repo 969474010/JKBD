@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     //进入随机测试
     public void text(View view) {
-        Intent intent=new Intent(MainActivity.this,ExamActivity.class);
-        startActivity(intent);
-        //startActivity(new Intent(MainActivity.this,ExamActivity.class));
+        //Intent intent=new Intent(MainActivity.this,ExamActivity.class);
+        //startActivity(intent);
+        startActivity(new Intent(MainActivity.this,ExamActivity.class));
     }
 
     //退出应用
