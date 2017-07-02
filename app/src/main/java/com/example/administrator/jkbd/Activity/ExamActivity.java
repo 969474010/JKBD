@@ -29,6 +29,9 @@ public class ExamActivity extends AppCompatActivity {
     TextView tvExamInfo,tvExamTitle,tvOp1,tvOp2,tvOp3,tvOp4;
     ImageView mImageView;
     IExamBiz biz;
+
+    boolean isLoadExamInfo=false;
+    boolean isLoadQuestion=false;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
@@ -59,17 +62,20 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void initData() {
-
-        ExamInfo examInfo = ExamApplication.getInstance().getmExamInfo();
-        if(examInfo!=null)
+        if (isLoadExamInfo&&isLoadQuestion)
         {
-            showData(examInfo);
-        }
+            ExamInfo examInfo = ExamApplication.getInstance().getmExamInfo();
+            if(examInfo!=null)
+            {
+                showData(examInfo);
+            }
 
-        List<Exam> examList= ExamApplication.getInstance().getmExamList();
-        if(examList!=null)
-        {
-            showExam(examList);
+            List<Exam> examList= ExamApplication.getInstance().getmExamList();
+            if(examList!=null)
+            {
+                showExam(examList);
+            }
+
         }
 
     }
@@ -95,6 +101,7 @@ public class ExamActivity extends AppCompatActivity {
         tvExamInfo.setText(examInfo.toString());
     }
 
+
     //创建内部类  下载考试信息
     class LoadExamBroadcast extends BroadcastReceiver
     {
@@ -103,8 +110,9 @@ public class ExamActivity extends AppCompatActivity {
             Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
             if(issuccess)
             {
-                initData();
+                isLoadExamInfo=true;
             }
+            initData();
         }
     }
 
@@ -116,8 +124,9 @@ public class ExamActivity extends AppCompatActivity {
             Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
             if(issuccess)
             {
-                initData();
+                isLoadQuestion=true;
             }
+            initData();
         }
     }
 }
