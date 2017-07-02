@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,10 +48,24 @@ public class ExamActivity extends AppCompatActivity {
         loadData();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLoadExamBrodcast!=null)
+        {
+            unregisterReceiver(mLoadExamBrodcast);
+        }
+        if (mLoadQuestionBroadcast!=null)
+        {
+            unregisterReceiver(mLoadQuestionBroadcast);
+        }
+    }
+
     private void setListecer() {
         registerReceiver(mLoadExamBrodcast,new IntentFilter(ExamApplication.LOAD_EXAM_INFO));
         registerReceiver(mLoadQuestionBroadcast,new IntentFilter(ExamApplication.LOAD_EXAM_QUESTION));
     }
+
 
     private void loadData() {
         biz=new ExamBiz();
@@ -120,6 +135,7 @@ public class ExamActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
+            Log.e("LoadExamBroadcast","LoadExamBroadcast,issuccess="+issuccess);
             if(issuccess)
             {
                 isLoadExamInfo=true;
@@ -134,6 +150,7 @@ public class ExamActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
+            Log.e("LoadQuestionBroadcast","LoadQuestionBroadcast,issuccess="+issuccess);
             if(issuccess)
             {
                 isLoadQuestion=true;
