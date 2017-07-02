@@ -16,17 +16,16 @@ public class SpalshActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashactivity);
-
+        timer.start();
 
     }
-    CountDownTimer timer=new CountDownTimer(3000,1000)
+    CountDownTimer timer=new CountDownTimer(2000,1000)
     {
         @Override
         public void onTick(long millisUntilFinished)
         {
 
         }
-
         @Override
         public void onFinish()
         {
@@ -35,8 +34,6 @@ public class SpalshActivity extends Activity{
             SpalshActivity.this.finish();
 
         }
-
-
     };
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Result
 {
+
     /**
      * error_code : 0
      * reason : ok
@@ -16,7 +17,7 @@ public class Result
 
     private int error_code;
     private String reason;
-    private List<Exam> result;
+    private static List<Exam> result;
 
     public int getError_code() {
         return error_code;
