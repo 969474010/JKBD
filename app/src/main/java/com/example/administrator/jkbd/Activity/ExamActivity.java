@@ -1,6 +1,9 @@
 package com.example.administrator.jkbd.Activity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -12,6 +15,8 @@ import com.example.administrator.jkbd.ExamApplication;
 import com.example.administrator.jkbd.R;
 import com.example.administrator.jkbd.bean.Exam;
 import com.example.administrator.jkbd.bean.ExamInfo;
+import com.example.administrator.jkbd.biz.ExamBiz;
+import com.example.administrator.jkbd.biz.IExamBiz;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -23,12 +28,24 @@ import java.util.List;
 public class ExamActivity extends AppCompatActivity {
     TextView tvExamInfo,tvExamTitle,tvOp1,tvOp2,tvOp3,tvOp4;
     ImageView mImageView;
+    IExamBiz biz;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_exam);
         initView();
-        initData();
+        loadData();
+    }
+
+    private void loadData() {
+        biz=new ExamBiz();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                biz.beginExam();
+            }
+        }).start();
     }
 
     private void initView() {
@@ -74,6 +91,33 @@ public class ExamActivity extends AppCompatActivity {
 
 
     private void showData(ExamInfo examInfo) {
+
         tvExamInfo.setText(examInfo.toString());
+    }
+
+    //创建内部类  下载考试信息
+    class LoadExamBroadcast extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
+            if(issuccess)
+            {
+                initData();
+            }
+        }
+    }
+
+    //  创建内部类判断试题是否下载成功
+    class LoadQuestionBroadcast extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Boolean issuccess= intent.getBooleanExtra(ExamApplication.LOAD_DATA_SUCCESS,false);
+            if(issuccess)
+            {
+                initData();
+            }
+        }
     }
 }
