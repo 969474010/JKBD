@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -32,12 +33,23 @@ public class ExamActivity extends AppCompatActivity {
 
     boolean isLoadExamInfo=false;
     boolean isLoadQuestion=false;
+
+    LoadExamBroadcast mLoadExamBrodcast;
+    LoadQuestionBroadcast mLoadQuestionBroadcast;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_exam);
+        mLoadExamBrodcast=new LoadExamBroadcast();
+        mLoadQuestionBroadcast=new LoadQuestionBroadcast();
+        setListecer();
         initView();
         loadData();
+    }
+
+    private void setListecer() {
+        registerReceiver(mLoadExamBrodcast,new IntentFilter(ExamApplication.LOAD_EXAM_INFO));
+        registerReceiver(mLoadQuestionBroadcast,new IntentFilter(ExamApplication.LOAD_EXAM_QUESTION));
     }
 
     private void loadData() {
