@@ -46,8 +46,8 @@ public class ExamActivity extends AppCompatActivity {
 
     
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         mLoadExamBrodcast=new LoadExamBroadcast();
         mLoadQuestionBroadcast=new LoadQuestionBroadcast();

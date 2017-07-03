@@ -15,13 +15,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam);
+        setContentView(R.layout.activity_main);
     }
 
     //进入随机测试
     public void text(View view) {
-        //Intent intent=new Intent(MainActivity.this,ExamActivity.class);
-        //startActivity(intent);
         startActivity(new Intent(MainActivity.this,ExamActivity.class));
     }
 
@@ -29,4 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public void Exit(View view) {
         finish();
     }
+
+
 }

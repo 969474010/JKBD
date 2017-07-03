@@ -49,10 +49,10 @@ public class ExamDao implements IExamDao {
     public void loadQuestionLists() {
 
         OkHttpUtils<String> utils1=new OkHttpUtils<>(ExamApplication.getInstance());
-        String url2="";
-        utils1.url(url2);
-        utils1.targetClass(String.class);
-        utils1.execute(new OkHttpUtils.OnCompleteListener<String>() {
+        String url2="http://101.251.196.90:8080/JztkServer/getQuestions?textType=rand";
+        utils1.url(url2)
+        .targetClass(String.class)
+        .execute(new OkHttpUtils.OnCompleteListener<String>() {
 
             @Override
             public void onSuccess(String jsonStr) {
