@@ -39,7 +39,7 @@
         tools:text="@string/exam_title"
         android:textColor="#000" />
 
-    <view
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#990000"
