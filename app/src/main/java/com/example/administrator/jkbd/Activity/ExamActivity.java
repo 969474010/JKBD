@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.jkbd.ExamApplication;
@@ -29,14 +30,21 @@ import java.util.List;
 
 public class ExamActivity extends AppCompatActivity {
     TextView tvExamInfo,tvExamTitle,tvOp1,tvOp2,tvOp3,tvOp4;
+    LinearLayout layoutloading;
     ImageView mImageView;
     IExamBiz biz;
 
     boolean isLoadExamInfo=false;
     boolean isLoadQuestion=false;
 
+    boolean isLoadingExamInfo=false;
+    boolean isLoadingQuestion=false;
+
     LoadExamBroadcast mLoadExamBrodcast;
     LoadQuestionBroadcast mLoadQuestionBroadcast;
+
+
+    
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
@@ -68,6 +76,7 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        layoutloading= (LinearLayout) findViewById(R.id.layout_loading);
         tvExamInfo=(TextView) findViewById(R.id.tv_examinfo);
         tvExamTitle=(TextView) findViewById(R.id.tv_exam_title);
         tvOp1=(TextView) findViewById(R.id.tv_op1);
@@ -129,6 +138,7 @@ public class ExamActivity extends AppCompatActivity {
             {
                 isLoadExamInfo=true;
             }
+            isLoadingExamInfo=true;
             initData();
         }
     }
@@ -144,6 +154,7 @@ public class ExamActivity extends AppCompatActivity {
             {
                 isLoadQuestion=true;
             }
+            isLoadingQuestion=true;
             initData();
         }
     }
